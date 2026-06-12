@@ -1,0 +1,385 @@
+/* ============================================================
+   MAGNIFICA HUMANITAS — Encyclical, Critical-Edition Layout
+   Cape Art Direction · ivory-dominant, ink-navy bands,
+   restrained gold, oversized marginal apparatus
+   ============================================================ */
+
+:root {
+  --royal:    #1F3E6E;
+  --crimson:  #8E1B24;
+  --crimson-2:#6f141b;
+  --gold:     #C8A35A;
+  --gold-deep:#9c7d3f;
+  --gold-lite:#e3cb92;
+  --gold-ink: #7d6332;  /* gold for small text on ivory — AA */
+  --stone-ink:#6f6b60;  /* stone for small text on ivory — AA */
+  --navy:     #143F73; /* matches band-texture.svg base */
+  --navy-2:   #18335c;
+  --ivory:    #F3EEE2; /* matches paper-texture.svg base */
+  --ivory-2:  #ECE7D8;
+  --paper-ln: #e3ddcb;
+  --stone:    #8d897e;
+  --ink:      #221f24;
+  --ink-soft: #43404a;
+
+  --display: "Cormorant Garamond", Georgia, serif;
+  --inst:    "Cinzel", Georgia, serif;
+  --read:    "EB Garamond", Georgia, serif;
+
+  --rail-w: 248px;
+  --measure: 640px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ivory) url("paper-texture.svg") top center repeat;
+  color: var(--ink);
+  font-family: var(--read);
+  font-size: 21px;
+  line-height: 1.74;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; }
+
+/* ---------- type helpers ---------- */
+.inst {
+  font-family: var(--inst);
+  text-transform: uppercase;
+  letter-spacing: .34em;
+  font-weight: 600;
+}
+.kicker { font-family: var(--inst); text-transform: uppercase; letter-spacing: .46em; font-weight: 600; font-size: 12px; color: var(--gold-ink); }
+
+/* ============================================================
+   CONTENTS RAIL (deep ink strip)
+   ============================================================ */
+.rail {
+  position: fixed; inset: 0 auto 0 0;
+  width: var(--rail-w); z-index: 40;
+  background: var(--navy) url("band-texture.svg") center / cover;
+  color: var(--ivory);
+  border-right: 1px solid rgba(200,163,90,.3);
+  display: flex; flex-direction: column;
+  padding: 34px 26px 22px;
+}
+.rail::after {
+  content: ""; position: absolute; top: 0; right: -1px;
+  width: 2px; height: var(--progress, 0%);
+  background: linear-gradient(180deg, var(--gold-lite), var(--gold));
+  box-shadow: 0 0 12px rgba(200,163,90,.7);
+  transition: height .12s linear;
+}
+.rail__mark { display: flex; align-items: center; gap: 12px; margin-bottom: 30px; cursor: pointer; }
+.rail__mark svg { width: 30px; height: 40px; flex: none; }
+.rail__mark .ttl { font-family: var(--inst); font-weight: 700; font-size: 12px; letter-spacing: .18em; line-height: 1.4; color: var(--gold-lite); text-transform: uppercase; }
+.rail__rule { height: 1px; background: linear-gradient(90deg, var(--gold-deep), transparent); margin-bottom: 6px; }
+
+.rail__nav { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; }
+.rail__nav a {
+  display: grid; grid-template-columns: 26px 1fr; gap: 12px; align-items: baseline;
+  text-decoration: none; padding: 11px 4px; color: rgba(244,241,232,.68);
+  border-top: 1px solid rgba(255,255,255,.05);
+  transition: color .2s, padding-left .2s;
+}
+.rail__nav li:last-child a { border-bottom: 1px solid rgba(255,255,255,.05); }
+.rail__nav a .num { font-family: var(--inst); font-size: 11px; letter-spacing: .06em; color: var(--gold); }
+.rail__nav a .tx { font-family: var(--read); font-size: 15.5px; line-height: 1.2; font-style: italic; }
+.rail__nav a:hover { color: var(--ivory); padding-left: 8px; }
+.rail__nav a.active { color: var(--gold-lite); }
+.rail__nav a.active .num { color: var(--gold); }
+.rail__nav a.active .tx { font-style: normal; font-weight: 600; }
+
+.rail__foot { margin-top: auto; padding-top: 18px; font-family: var(--inst); font-size: 9px; letter-spacing: .28em; color: rgba(166,162,154,.5); text-transform: uppercase; line-height: 2; }
+
+.topbar { display: none; }
+
+/* ============================================================
+   SHELL
+   ============================================================ */
+.shell { position: relative; z-index: 1; margin-left: var(--rail-w); }
+section { position: relative; }
+
+/* ============================================================
+   INK BAND (cover, chapter openers, colophon)
+   ============================================================ */
+.band {
+  background: var(--navy) url("band-texture.svg") center / cover;
+  color: var(--ivory);
+  position: relative;
+  overflow: hidden;
+}
+.band > * { position: relative; z-index: 2; }
+
+/* giant ghosted crest watermark */
+.watermark {
+  position: absolute; z-index: 1; pointer-events: none;
+  opacity: .07;
+  color: var(--gold);
+}
+
+/* ============================================================
+   COVER
+   ============================================================ */
+.cover { min-height: 100vh; display: flex; flex-direction: column; padding: clamp(34px,5vw,64px); }
+.cover__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.cover__top .meta { text-align: right; font-family: var(--inst); font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: rgba(227,203,146,.8); line-height: 2; }
+.cover__top .mark { display: flex; align-items: center; gap: 14px; }
+.cover__top .mark svg { width: 30px; height: 40px; }
+
+.cover__center { margin-top: auto; margin-bottom: auto; padding: 40px 0; max-width: 1100px; }
+.cover h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(64px, 15vw, 220px);
+  line-height: .84;
+  letter-spacing: -.01em;
+  margin: 0;
+  color: var(--ivory);
+}
+.cover h1 .it { display: block; font-style: italic; font-weight: 400; color: var(--gold); margin-left: .04em; }
+/* matte antique-gold thread: tonal depth, no chrome highlight */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .cover h1 .it {
+    background: linear-gradient(172deg, var(--gold-lite) 0%, var(--gold) 48%, var(--gold-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+.cover__sub {
+  margin: clamp(28px,4vw,48px) 0 0;
+  max-width: 620px;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(20px, 2.6vw, 30px);
+  line-height: 1.32;
+  color: rgba(244,241,232,.92);
+}
+.cover__rule { width: 64px; height: 2px; background: var(--gold); margin: clamp(24px,3.4vw,40px) 0 0; }
+
+.cover__foot { display: flex; flex-wrap: wrap; gap: 14px 56px; align-items: flex-end; }
+.cover__foot .blk .lab { font-family: var(--inst); font-size: 9.5px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold-deep); display: block; margin-bottom: 6px; }
+.cover__foot .blk .val { font-family: var(--display); font-size: 19px; color: var(--ivory); font-style: italic; }
+
+/* vertical latin spine on right edge */
+.cover__spine {
+  position: absolute; right: clamp(16px,2.5vw,30px); top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  writing-mode: vertical-rl;
+  font-family: var(--inst); font-size: 11px; letter-spacing: .5em; text-transform: uppercase;
+  color: rgba(200,163,90,.55); z-index: 3;
+}
+
+.cover .watermark { right: -8%; bottom: -14%; width: 62vh; height: auto; }
+
+/* ============================================================
+   INCIPIT (preamble statement on ivory)
+   ============================================================ */
+.incipit { padding: clamp(80px,11vw,150px) clamp(32px,6vw,90px); max-width: 1120px; }
+.incipit .kicker { display:block; margin-bottom: 30px; }
+.incipit__q {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(30px, 5.4vw, 64px); line-height: 1.16; letter-spacing: -.005em;
+  color: var(--ink); margin: 0; max-width: 16ch; text-wrap: balance;
+}
+.incipit__q .babel { font-style: italic; color: var(--crimson); }
+.incipit__q .jeru { font-style: italic; color: var(--royal); }
+.incipit__attr { margin-top: 40px; font-family: var(--inst); font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--stone-ink); }
+
+/* ============================================================
+   HAIRLINE DIVIDER w/ small crest
+   ============================================================ */
+.divide { display: flex; align-items: center; gap: 22px; max-width: 1120px; margin: 0 auto; padding: 0 clamp(32px,6vw,90px); }
+.divide .ln { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-deep) 40%, var(--gold-deep) 60%, transparent); opacity: .55; }
+.divide svg { width: 22px; height: 28px; flex: none; opacity: .8; }
+
+/* ============================================================
+   CONTENTS / INDEX (ink band, editorial list)
+   ============================================================ */
+.contents { padding: clamp(70px,9vw,120px) clamp(32px,6vw,90px); }
+.contents__head { margin-bottom: 50px; }
+.contents__head .kicker { color: var(--gold); display:block; margin-bottom: 16px; }
+.contents__head h2 { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(34px,6vw,72px); margin: 0; color: var(--ivory); }
+.toc { list-style: none; margin: 0; padding: 0; max-width: 1100px; }
+.toc li a {
+  display: grid; grid-template-columns: clamp(86px,12vw,150px) 1fr auto; gap: clamp(18px,3vw,44px);
+  align-items: center; text-decoration: none;
+  padding: clamp(18px,2.4vw,28px) 0;
+  border-top: 1px solid rgba(200,163,90,.22);
+  transition: padding-left .3s, background .3s;
+}
+.toc li:last-child a { border-bottom: 1px solid rgba(200,163,90,.22); }
+.toc li a:hover { padding-left: 14px; }
+.toc li a:hover .name { color: var(--gold-lite); }
+.toc .roman { font-family: var(--inst); font-weight: 600; font-size: clamp(13px,1.4vw,16px); letter-spacing: .12em; color: var(--gold); text-transform: uppercase; }
+.toc .name { font-family: var(--display); font-size: clamp(22px,3.2vw,40px); color: var(--ivory); line-height: 1.1; transition: color .3s; }
+.toc .name em { display: block; font-style: italic; font-size: .5em; color: rgba(244,241,232,.5); letter-spacing: .02em; margin-top: 6px; font-family: var(--read); }
+.toc .nn { font-family: var(--inst); font-size: 11px; letter-spacing: .1em; color: var(--gold-lite); white-space: nowrap; }
+
+/* ============================================================
+   CHAPTER OPENER (ink band)
+   ============================================================ */
+.opener { padding: clamp(70px,11vw,150px) clamp(32px,6vw,90px) clamp(56px,8vw,110px); }
+.opener .caput { font-family: var(--inst); font-weight: 600; letter-spacing: .4em; text-transform: uppercase; font-size: clamp(11px,1.3vw,13px); color: var(--gold); }
+.opener h2 { font-family: var(--display); font-weight: 500; font-size: clamp(38px,7vw,96px); line-height: .96; letter-spacing: -.01em; margin: 22px 0 0; color: var(--ivory); max-width: 16ch; text-wrap: balance; }
+.opener .lat { display: block; font-style: italic; font-weight: 400; font-size: clamp(18px,2.6vw,30px); color: var(--gold); margin-top: 18px; }
+.opener .watermark { font-family: var(--display); font-weight: 300; font-size: clamp(180px, 40vw, 460px); line-height: .7; right: clamp(20px,4vw,70px); bottom: -8%; opacity: .06; color: var(--gold-lite); letter-spacing: -.02em; }
+
+/* ============================================================
+   READING — critical-edition grid with marginal apparatus
+   ============================================================ */
+.reading { padding: clamp(54px,7vw,96px) clamp(32px,6vw,90px) clamp(70px,9vw,120px); max-width: 1180px; }
+
+.passage {
+  display: grid;
+  grid-template-columns: clamp(120px, 24%, 250px) minmax(0, var(--measure));
+  gap: clamp(28px, 5vw, 80px);
+  margin-bottom: clamp(40px,5vw,72px);
+}
+.passage:last-child { margin-bottom: 0; }
+
+.marg { text-align: right; padding-top: 6px; position: sticky; top: 30px; align-self: start; }
+.marg__nn { display: block; font-family: var(--display); font-weight: 300; font-size: clamp(46px,6vw,92px); line-height: .9; color: var(--crimson); letter-spacing: -.02em; }
+.marg__t { display: block; margin-top: clamp(16px, 2.2vw, 30px); font-family: var(--inst); font-weight: 600; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--royal); line-height: 1.5; }
+.marg__sub { display:block; margin-top: 8px; font-family: var(--read); font-style: italic; font-size: 14px; color: var(--stone-ink); }
+
+.body p { margin: 0 0 1.2em; text-wrap: pretty; }
+.body p:last-child { margin-bottom: 0; }
+.body em { font-style: italic; }
+
+/* illuminated drop cap on lead passage */
+.body.lead > p:first-of-type::first-letter {
+  font-family: var(--display); font-weight: 600; float: left;
+  font-size: 5.6em; line-height: .7; padding: 10px 16px 0 0; margin-top: 8px;
+  color: var(--crimson);
+}
+
+/* pull quote */
+.pull { margin: 1.7em 0; padding-left: clamp(20px,3vw,34px); border-left: 2px solid var(--crimson); }
+.pull p { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(24px,3.4vw,38px); line-height: 1.2; color: var(--royal); margin: 0; }
+.pull cite { display: block; font-style: normal; font-family: var(--inst); font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--gold-ink); margin-top: 16px; }
+
+/* ordered ceremonial list */
+.ord { list-style: none; counter-reset: ord; margin: 1.5em 0; padding: 0; }
+.ord li { counter-increment: ord; display: grid; grid-template-columns: 52px 1fr; gap: 20px; padding: 18px 0; border-top: 1px solid var(--paper-ln); align-items: baseline; }
+.ord li:last-child { border-bottom: 1px solid var(--paper-ln); }
+.ord li::before { content: counter(ord, upper-roman); font-family: var(--display); font-weight: 500; font-size: 30px; color: var(--crimson); line-height: 1; }
+.ord b { font-family: var(--inst); font-weight: 600; font-size: 13px; letter-spacing: .08em; color: var(--royal); display: block; margin-bottom: 5px; text-transform: uppercase; }
+.ord .d { font-size: .92em; line-height: 1.55; color: var(--ink-soft); }
+
+/* lineage */
+.lineage { margin: 1.4em 0; padding: 0; list-style: none; }
+.lineage li { padding: 15px 0; border-top: 1px solid var(--paper-ln); display: grid; grid-template-columns: 210px 1fr; gap: 20px; align-items: baseline; }
+.lineage li:last-child { border-bottom: 1px solid var(--paper-ln); }
+.lineage b { font-family: var(--inst); font-weight: 600; font-size: 13px; letter-spacing: .06em; color: var(--royal); text-transform: uppercase; }
+.lineage b span { display: block; font-family: var(--display); font-style: italic; font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--gold-ink); font-size: 17px; margin-top: 3px; }
+.lineage .d { font-size: .9em; color: var(--ink-soft); line-height: 1.5; }
+
+/* ============================================================
+   COLOPHON
+   ============================================================ */
+.colophon { text-align: center; padding: clamp(80px,11vw,150px) 32px clamp(60px,8vw,100px); }
+.colophon__seal { width: 92px; height: 118px; margin-bottom: 30px; }
+.colophon__given { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(21px,2.8vw,30px); color: rgba(244,241,232,.9); line-height: 1.55; max-width: 620px; margin: 0 auto 34px; }
+.colophon__sig { font-family: var(--inst); font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-lite); font-size: clamp(18px,2.4vw,26px); margin-bottom: 8px; }
+.colophon__role { font-family: var(--display); font-style: italic; color: var(--stone); font-size: 18px; }
+.colophon__line { width: 110px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 42px auto 0; }
+.colophon__fine { margin-top: 22px; font-family: var(--inst); font-size: 10px; letter-spacing: .4em; text-transform: uppercase; color: rgba(166,162,154,.55); }
+
+/* ============================================================
+   REVEAL — gated on .js so content stays visible without JS
+   ============================================================ */
+html.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .9s ease, transform .9s ease; }
+html.js .reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 980px) {
+  :root { --rail-w: 0px; }
+  .rail { display: none; }
+  .shell { margin-left: 0; }
+  .topbar {
+    display: flex; position: fixed; inset: 0 0 auto 0; z-index: 50;
+    align-items: center; justify-content: space-between; padding: 11px 16px;
+    background: rgba(11,18,34,.94); backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(200,163,90,.3);
+  }
+  .topbar__ttl { display: flex; align-items: center; gap: 9px; font-family: var(--inst); font-weight: 700; font-size: 11px; letter-spacing: .14em; color: var(--gold-lite); text-transform: uppercase; }
+  .topbar__ttl svg { width: 18px; height: 24px; }
+  .topbar__prog { position: absolute; left: 0; bottom: -2px; height: 2px; width: var(--progress,0%); background: linear-gradient(90deg, var(--gold-lite), var(--gold)); z-index: 51; }
+  .topbar select { background: transparent; color: var(--gold-lite); border: 1px solid rgba(200,163,90,.4); font-family: var(--inst); font-size: 11px; letter-spacing: .08em; padding: 11px 8px; min-height: 44px; border-radius: 2px; max-width: 52vw; }
+  .cover { padding-top: 84px; }
+  .cover__spine { display: none; }
+  section { scroll-margin-top: 72px; }
+  body { font-size: 19px; }
+}
+/* ============================================================
+   PRINT — ink on paper, chapter per page
+   ============================================================ */
+@media print {
+  .rail, .topbar, .watermark, .cover__spine, .divide { display: none !important; }
+  html { scroll-behavior: auto; }
+  html.js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+  body { background: #fff none; color: #000; font-size: 11.5pt; line-height: 1.6; }
+  .shell { margin-left: 0; }
+  .band { background: none !important; color: var(--ink); }
+
+  /* cover becomes a title page */
+  .cover { min-height: auto; padding: 48pt 0 24pt; }
+  .cover h1 { color: var(--ink); font-size: 56pt; }
+  .cover h1 .it {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: var(--gold-ink);
+  }
+  .cover__sub { color: var(--ink); }
+  .cover__top .meta, .cover__foot .blk .lab { color: var(--gold-ink); }
+  .cover__foot .blk .val { color: var(--ink); }
+
+  /* navy-band text remapped to ink */
+  .contents__head h2, .opener h2, .toc .name, .colophon__given { color: var(--ink); }
+  .toc .name em { color: var(--stone-ink); }
+  .toc .nn, .toc .roman, .opener .caput, .opener .lat,
+  .contents__head .kicker, .colophon__sig { color: var(--gold-ink); }
+  .colophon__role, .colophon__fine { color: var(--stone-ink); }
+  .toc li a, .toc li:last-child a { border-color: #d8d2c2; }
+
+  /* pagination */
+  section[id] { break-before: page; }
+  .pull, .ord li, .lineage li, .passage, .incipit { break-inside: avoid; }
+  .marg { position: static; }
+
+  /* contents on its own page, fits one page */
+  .contents { break-before: page; padding: 24pt 0 0; }
+  .contents__head { margin-bottom: 16pt; }
+  .contents__head h2 { font-size: 28pt; }
+  .toc li a { padding: 9pt 0; }
+  .toc .name { font-size: 15pt; }
+  .toc .name em { font-size: 9pt; margin-top: 2pt; }
+}
+
+@media (max-width: 720px) {
+  .passage { grid-template-columns: 1fr; gap: 14px; }
+  .marg { text-align: left; position: static; display: flex; align-items: baseline; gap: 16px; padding-top: 0; }
+  .marg__nn { font-size: 40px; }
+  .marg__t { margin-top: 0; }
+  .marg__sub { display: none; }
+  .toc li a { grid-template-columns: 1fr; gap: 6px; }
+  .toc .nn { grid-row: 1; }
+  .lineage li { grid-template-columns: 1fr; gap: 4px; }
+  .body.lead > p:first-of-type::first-letter { font-size: 4.4em; }
+}
