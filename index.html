@@ -15,9 +15,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/styles.css?v=20260611b" />
+<link rel="stylesheet" href="assets/styles.css?v=20260616" />
 </head>
 <body>
+
+<a class="skip" href="#executive-summary">Skip to summary</a>
 
 <!-- Heraldic crest: triple tiara over crossed keys -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -88,6 +90,11 @@
     <li><a href="#cap5"><span class="num">V</span><span class="tx">The Civilization of Love</span></a></li>
     <li><a href="#conclusio"><span class="num">·</span><span class="tx">Conclusion</span></a></li>
   </ol>
+  <div class="rail__live" aria-live="polite" aria-label="Current position">
+    <span class="lab">Paragraphs</span><span class="val" data-live="range">—</span>
+    <span class="lab">Theme</span><span class="val" data-live="theme">—</span>
+    <span class="lab">Key question</span><span class="val" data-live="question">—</span>
+  </div>
   <div class="rail__foot">Litterae Encyclicae<br />Leo PP. XIV · A.D. MMXXVI</div>
 </nav>
 
@@ -96,12 +103,27 @@
   <span class="topbar__ttl"><svg style="color:var(--gold)" aria-hidden="true"><use href="#crest" /></svg> Magnifica Humanitas</span>
   <select id="jump" aria-label="Jump to section">
     <option value="#top">Cover</option>
-    <option value="#introitus">Introduction</option>
-    <option value="#cap1">I · Faithful to the Gospel</option>
-    <option value="#cap2">II · Foundations</option>
-    <option value="#cap3">III · Technology</option>
-    <option value="#cap4">IV · Truth, Work, Freedom</option>
-    <option value="#cap5">V · Civilization of Love</option>
+    <optgroup label="Orientation">
+      <option value="#executive-summary">Executive Summary</option>
+      <option value="#reading-modes">Reading Modes</option>
+      <option value="#reader-paths">Reader Paths</option>
+      <option value="#principles">Five Principles</option>
+      <option value="#doctrine-map">Doctrine Map</option>
+    </optgroup>
+    <optgroup label="The Encyclical">
+      <option value="#introitus">Introduction</option>
+      <option value="#cap1">I · Faithful to the Gospel</option>
+      <option value="#cap2">II · Foundations</option>
+      <option value="#cap3">III · Technology</option>
+      <option value="#cap4">IV · Truth, Work, Freedom</option>
+      <option value="#cap5">V · Civilization of Love</option>
+    </optgroup>
+    <optgroup label="Apply">
+      <option value="#governance-gates">Governance Gates</option>
+      <option value="#red-lines">Five Red Lines</option>
+      <option value="#person-test">The Person Test</option>
+      <option value="#export-doctrine">Export the Doctrine</option>
+    </optgroup>
     <option value="#conclusio">Conclusion</option>
   </select>
   <div class="topbar__prog"></div>
@@ -136,6 +158,72 @@
     <p class="incipit__attr">From the Opening · nn. 1–10</p>
   </section>
 
+  <!-- ====================== EXECUTIVE SUMMARY ====================== -->
+  <section class="summa reveal" id="executive-summary">
+    <span class="kicker">Summa · The Argument in Brief</span>
+    <h2 class="summa__t">A Doctrine for Judging Machines by What They Do to the Human Person</h2>
+    <p class="summa__body"><b>Magnifica Humanitas</b> argues that artificial intelligence must be judged by whether it protects or diminishes the human person. Its central claim is simple: <b>human dignity cannot be earned, measured, optimized, automated, or delegated away.</b></p>
+    <p class="summa__line">The machine may calculate. It may not absolve.</p>
+  </section>
+
+  <!-- ====================== READING MODES ====================== -->
+  <section class="modes reveal" id="reading-modes">
+    <span class="kicker">Tria Itinera · Three Ways to Read</span>
+    <div class="modes__grid">
+      <a class="mode" href="#introitus">
+        <span class="mode__n">I</span>
+        <span class="mode__t">Read the Encyclical</span>
+        <span class="mode__d">The full ceremonial text, in five chapters from the Introduction to the Magnificat.</span>
+      </a>
+      <a class="mode" href="#principles">
+        <span class="mode__n">II</span>
+        <span class="mode__t">Extract the Doctrine</span>
+        <span class="mode__d">The doctrine map, the five principles, the red lines, and the quotable core.</span>
+      </a>
+      <a class="mode" href="#governance-gates">
+        <span class="mode__n">III</span>
+        <span class="mode__t">Apply the Doctrine</span>
+        <span class="mode__d">The governance gates, the person test, and an exportable governance skill.</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ====================== READER PATHS ====================== -->
+  <section class="console reveal" id="reader-paths">
+    <div class="app-head">
+      <span class="kicker">Pro Lectore · Enter by Your Calling</span>
+      <h2>Reader Paths</h2>
+      <p class="sub">Find the question you carry, and the doctrine answers it.</p>
+    </div>
+    <div class="paths__grid">
+      <a class="path" href="#governance-gates">
+        <span class="path__role">For Builders</span>
+        <span class="path__q">How should I design AI without degrading human agency?</span>
+        <span class="path__to">Governance Gates</span>
+      </a>
+      <a class="path" href="#red-lines">
+        <span class="path__role">For Policymakers</span>
+        <span class="path__q">What must be regulated?</span>
+        <span class="path__to">Five Red Lines</span>
+      </a>
+      <a class="path" href="#cap4">
+        <span class="path__role">For Workers</span>
+        <span class="path__q">What protections does dignity require?</span>
+        <span class="path__to">Truth, Work, Freedom</span>
+      </a>
+      <a class="path" href="#cap2">
+        <span class="path__role">For Theologians</span>
+        <span class="path__q">How does Catholic Social Doctrine extend into AI?</span>
+        <span class="path__to">Foundations &amp; Principles</span>
+      </a>
+      <a class="path" href="#doctrine-map">
+        <span class="path__role">For Investors</span>
+        <span class="path__q">Which AI companies build toward Jerusalem, not Babel?</span>
+        <span class="path__to">The Doctrine Map</span>
+      </a>
+    </div>
+  </section>
+
   <div class="divide reveal"><span class="ln"></span><svg style="color:var(--gold-deep)" aria-hidden="true"><use href="#crest" /></svg><span class="ln"></span></div>
 
   <!-- ====================== CONTENTS ====================== -->
@@ -155,12 +243,102 @@
     </ol>
   </section>
 
+  <!-- ====================== FIVE PRINCIPLE CARDS ====================== -->
+  <section class="console reveal" id="principles">
+    <div class="app-head">
+      <span class="kicker">Quinque Principia · For the Digital Age</span>
+      <h2>Five Principles for the Digital Age</h2>
+      <p class="sub">The doctrine, translated into a test for machines.</p>
+    </div>
+    <div class="pcards">
+      <article class="pcard">
+        <div class="pcard__n">I</div>
+        <div class="pcard__t">Common Good</div>
+        <dl>
+          <dt>Doctrine</dt><dd>Not the mere sum of interests, but a “plus” born of interdependence.</dd>
+          <dt>AI translation</dt><dd>AI systems must be judged by their effects on shared life, public trust, access, and institutional power.</dd>
+          <dt>Governance question</dt><dd>Who benefits, who pays the cost, and who is excluded?</dd>
+          <dt>Red flag</dt><dd class="flag">A system concentrates power while distributing harm.</dd>
+        </dl>
+      </article>
+      <article class="pcard">
+        <div class="pcard__n">II</div>
+        <div class="pcard__t">Universal Destination of Goods</div>
+        <dl>
+          <dt>Doctrine</dt><dd>The goods of the earth belong to all — including patents, algorithms, platforms, infrastructure, and data.</dd>
+          <dt>AI translation</dt><dd>Data and digital infrastructure must not become private empires when they shape public life.</dd>
+          <dt>Governance question</dt><dd>Is this system enclosing a shared good?</dd>
+          <dt>Red flag</dt><dd class="flag">Public data is harvested into private control without return, remedy, or accountability.</dd>
+        </dl>
+      </article>
+      <article class="pcard">
+        <div class="pcard__n">III</div>
+        <div class="pcard__t">Subsidiarity</div>
+        <dl>
+          <dt>Doctrine</dt><dd>Higher powers must not supplant lower communities.</dd>
+          <dt>AI translation</dt><dd>AI must preserve local agency, human appeal, and community-level override.</dd>
+          <dt>Governance question</dt><dd>Who can contest or override the system?</dd>
+          <dt>Red flag</dt><dd class="flag">A centralized model imposes decisions with no meaningful appeal.</dd>
+        </dl>
+      </article>
+      <article class="pcard">
+        <div class="pcard__n">IV</div>
+        <div class="pcard__t">Solidarity</div>
+        <dl>
+          <dt>Doctrine</dt><dd>Networks create nearness, but solidarity is the conscious choice to bear one another.</dd>
+          <dt>AI translation</dt><dd>AI should not exploit invisible labor, vulnerable users, or distant communities.</dd>
+          <dt>Governance question</dt><dd>Whose labor, data, attention, or environment makes this system possible?</dd>
+          <dt>Red flag</dt><dd class="flag">The system hides the people who pay its real cost.</dd>
+        </dl>
+      </article>
+      <article class="pcard">
+        <div class="pcard__n">V</div>
+        <div class="pcard__t">Social Justice</div>
+        <dl>
+          <dt>Doctrine</dt><dd>Place the person, not wealth or data accumulation, at the center.</dd>
+          <dt>AI translation</dt><dd>AI must not create new exclusions through surveillance, opacity, scoring, or automation.</dd>
+          <dt>Governance question</dt><dd>Does this system make the vulnerable more vulnerable?</dd>
+          <dt>Red flag</dt><dd class="flag">The system quietly punishes people who cannot be easily measured.</dd>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  <!-- ====================== DOCTRINE MAP ====================== -->
+  <section class="console reveal" id="doctrine-map">
+    <div class="app-head">
+      <span class="kicker">Tabula Doctrinae</span>
+      <h2>Doctrine Map</h2>
+      <p class="sub">From theological foundation to AI governance action.</p>
+    </div>
+    <div class="dmap">
+      <div class="dcol">
+        <h3>Foundation</h3>
+        <ul><li>Human dignity</li><li>Common good</li><li>Subsidiarity</li><li>Solidarity</li><li>Social justice</li></ul>
+      </div>
+      <div class="dcol">
+        <h3>Threats</h3>
+        <ul><li>Technocratic paradigm</li><li>AI mystification</li><li>Data enclosure</li><li>Digital colonialism</li><li>Automated war</li><li>Synthetic falsehood</li></ul>
+      </div>
+      <div class="dcol">
+        <h3>Protected Goods</h3>
+        <ul><li>Truth</li><li>Work</li><li>Freedom</li><li>Human weakness</li><li>Peace</li><li>Communion</li></ul>
+      </div>
+      <div class="dcol">
+        <h3>Required Actions</h3>
+        <ul><li>Transparent algorithms</li><li>Worker protection</li><li>Human oversight</li><li>Data stewardship</li><li>Digital sobriety</li><li>Multilateral governance</li></ul>
+      </div>
+    </div>
+  </section>
+
   <!-- ====================== INTRODUCTION ====================== -->
   <section id="introitus">
     <div class="band opener reveal">
       <div class="watermark" aria-hidden="true">·</div>
       <p class="caput">Introitus · nn. 1–16</p>
       <h2>The Res Novae of Our Time <span class="lat">The new things of our age</span></h2>
+      <p class="opener__summary">The age of AI forces a choice between Babel — domination through efficiency — and Jerusalem — shared responsibility for human dignity.</p>
+      <p class="opener__quote">“Technology is never neutral; it takes on the characteristics of those who devise and finance it.”</p>
     </div>
     <div class="reading">
       <div class="passage reveal">
@@ -179,7 +357,13 @@
         <aside class="marg"><span class="marg__nn">7–10</span><span class="marg__t">Babel or Jerusalem</span></aside>
         <div class="body">
           <p>Two biblical images set our course. The <em>Tower of Babel</em> is the project of self-sufficiency and pride — the homogenization of humanity, dignity sacrificed to efficiency, the pretense of reaching heaven without God. Its modern syndrome is the idolatry of profit and the conceit that a single digital language can translate the mystery of the person into data and performance. The <em>rebuilding of Jerusalem</em> is the other path: Nehemiah imposed nothing from above but convened families and assigned them their portion of the wall. So too our age calls for shared responsibility, for synodality, for diversity received as a resource.</p>
-          <div class="pull"><p>Technology is never neutral; it takes on the characteristics of those who devise and finance it.</p><cite>nn. 9</cite></div>
+          <div class="pull" id="q-neutral"><p>Technology is never neutral; it takes on the characteristics of those who devise and finance it.</p><cite>nn. 9</cite>
+            <div class="qbar" data-rule="Require disclosure of the values, incentives, funding structures, and deployment context shaping the system.">
+              <button type="button" data-act="quote">Copy quote</button>
+              <button type="button" data-act="rule">Copy governance rule</button>
+              <button type="button" data-act="link">Copy link</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="passage reveal">
@@ -199,6 +383,8 @@
       <div class="watermark" aria-hidden="true">I</div>
       <p class="caput">Caput Primum · nn. 17–45</p>
       <h2>A Dynamic Approach Faithful to the Gospel <span class="lat">De ratione dynamica Evangelio fideli</span></h2>
+      <p class="opener__summary">Catholic Social Doctrine is a living method of discernment, not a museum of fixed answers.</p>
+      <p class="opener__quote">“Social Doctrine is not a museum of answers, but a shared discernment between the eternal and the new.”</p>
     </div>
     <div class="reading">
       <div class="passage reveal">
@@ -221,7 +407,12 @@
             <li><b>Benedict XVI<span>Caritas in Veritate · 2009</span></b><span class="d">Globalization and finance under the rule of charity in truth.</span></li>
             <li><b>Francis<span>Laudato Si’ · 2015</span></b><span class="d">Integral ecology: the cry of the earth and the cry of the poor are one.</span></li>
           </ul>
-          <div class="pull"><p>Social Doctrine is not a museum of answers, but a shared discernment between the eternal and the new.</p><cite>nn. 24</cite></div>
+          <div class="pull" id="q-discernment"><p>Social Doctrine is not a museum of answers, but a shared discernment between the eternal and the new.</p><cite>nn. 24</cite>
+            <div class="qbar">
+              <button type="button" data-act="quote">Copy quote</button>
+              <button type="button" data-act="link">Copy link</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -235,6 +426,8 @@
       <div class="watermark" aria-hidden="true">II</div>
       <p class="caput">Caput Secundum · nn. 46–89</p>
       <h2>Foundations &amp; Principles of Social Doctrine <span class="lat">De fundamentis et principiis</span></h2>
+      <p class="opener__summary">The human person is made for communion and bears a dignity no machine may weigh.</p>
+      <p class="opener__quote">“Human dignity cannot be earned.”</p>
     </div>
     <div class="reading">
       <div class="passage reveal">
@@ -247,7 +440,13 @@
         <aside class="marg"><span class="marg__nn">48–58</span><span class="marg__t">Ontological Dignity</span></aside>
         <div class="body">
           <p>Moral, social, and existential dignity may rise or fall with our choices and conditions. But <em>ontological</em> dignity is infinite and inalienable, grounded in the simple fact of being created and loved by God. It cannot be earned, and it does not depend on efficiency, productivity, or algorithms. Against every insidious ideology that bids us “earn” our worth — reducing the person to an exploitable resource — the Church proclaims the inviolability of the human being.</p>
-          <div class="pull"><p>Human dignity cannot be earned, and it does not depend on efficiency, productivity, or algorithms.</p><cite>nn. 52</cite></div>
+          <div class="pull" id="q-dignity"><p>Human dignity cannot be earned, and it does not depend on efficiency, productivity, or algorithms.</p><cite>nn. 52</cite>
+            <div class="qbar" data-rule="Do not deploy AI systems that rank, exclude, punish, or exploit people based on predicted productivity, efficiency, vulnerability, or social value.">
+              <button type="button" data-act="quote">Copy quote</button>
+              <button type="button" data-act="rule">Copy governance rule</button>
+              <button type="button" data-act="link">Copy link</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="passage reveal">
@@ -273,6 +472,8 @@
       <div class="watermark" aria-hidden="true">III</div>
       <p class="caput">Caput Tertium · nn. 90–130</p>
       <h2>Technology &amp; Dominance <span class="lat">De technologia et dominatione</span></h2>
+      <p class="opener__summary">AI becomes dangerous when technical power claims the right to govern human life.</p>
+      <p class="opener__quote">“Humanity flourishes through its limitations, not in spite of them.”</p>
     </div>
     <div class="reading">
       <div class="passage reveal">
@@ -297,7 +498,12 @@
         <aside class="marg"><span class="marg__nn">112–130</span><span class="marg__t">Against the Promethean Dream</span></aside>
         <div class="body">
           <p>Transhumanism would treat illness, aging, and vulnerability as mere defects, dreaming of an enhanced or hybrid being. Yet humanity flourishes <em>through</em> its limits, not in spite of them; to abolish all suffering would be to extinguish love and desire. The authentic “more than human” comes not by technological divinization but by Grace — by God drawing us beyond ourselves into communion.</p>
-          <div class="pull"><p>Humanity flourishes through its limitations, not in spite of them.</p><cite>nn. 116</cite></div>
+          <div class="pull" id="q-flourish"><p>Humanity flourishes through its limitations, not in spite of them.</p><cite>nn. 116</cite>
+            <div class="qbar">
+              <button type="button" data-act="quote">Copy quote</button>
+              <button type="button" data-act="link">Copy link</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -311,6 +517,8 @@
       <div class="watermark" aria-hidden="true">IV</div>
       <p class="caput">Caput Quartum · nn. 131–181</p>
       <h2>Safeguarding Humanity — Truth, Work, Freedom <span class="lat">De veritate, labore, libertate tuendis</span></h2>
+      <p class="opener__summary">Truth, work, and freedom must be protected from systems that exploit attention, labor, and vulnerability.</p>
+      <p class="opener__quote">“The pursuit of greater profit cannot justify the choices that systematically sacrifice human work.”</p>
     </div>
     <div class="reading">
       <div class="passage reveal">
@@ -329,7 +537,13 @@
         <aside class="marg"><span class="marg__nn">148–156</span><span class="marg__t">The Dignity of Work</span></aside>
         <div class="body">
           <p>Work is the essential key to the social question. AI promises greater productivity, yet binds the worker to the speed of the machine, threatening to de-skill labor and to subject it to automated surveillance. The pursuit of profit cannot justify choices that systematically sacrifice human employment; automation must be accompanied by verifiable measures to protect work and to retrain workers.</p>
-          <div class="pull"><p>The pursuit of greater profit cannot justify the choices that systematically sacrifice human work.</p><cite>nn. 153</cite></div>
+          <div class="pull" id="q-work"><p>The pursuit of greater profit cannot justify the choices that systematically sacrifice human work.</p><cite>nn. 153</cite>
+            <div class="qbar" data-rule="Require worker impact review, retraining plan, surveillance limits, and displacement mitigation before automation.">
+              <button type="button" data-act="quote">Copy quote</button>
+              <button type="button" data-act="rule">Copy governance rule</button>
+              <button type="button" data-act="link">Copy link</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="passage reveal">
@@ -349,6 +563,8 @@
       <div class="watermark" aria-hidden="true">V</div>
       <p class="caput">Caput Quintum · nn. 182–228</p>
       <h2>The Culture of Power &amp; the Civilization of Love <span class="lat">De cultura potentiæ et civilitate amoris</span></h2>
+      <p class="opener__summary">A civilization of love requires accountability, restraint, justice, and human control over the tools of war.</p>
+      <p class="opener__quote">“Blame may never be collapsed into ‘the machine.’”</p>
     </div>
     <div class="reading">
       <div class="passage reveal">
@@ -385,19 +601,157 @@
 
   <div class="divide reveal"><span class="ln"></span><svg style="color:var(--gold-deep)" aria-hidden="true"><use href="#crest" /></svg><span class="ln"></span></div>
 
+  <!-- ====================== GOVERNANCE GATES ====================== -->
+  <section class="console reveal" id="governance-gates">
+    <div class="app-head">
+      <span class="kicker">Portae · The Gates of Judgment</span>
+      <h2>Governance Gates</h2>
+      <p class="sub">No AI system should pass without answering these questions.</p>
+    </div>
+    <div class="gates">
+      <details class="gate">
+        <summary>
+          <span class="gate__n">I</span>
+          <span class="gate__q"><b>Gate · Human Dignity</b>Does the system reduce a person to a score, prediction, risk category, productivity measure, or behavioral value?</span>
+          <span class="gate__chev" aria-hidden="true">›</span>
+        </summary>
+        <div class="gate__body">
+          <div class="verdict pass"><span class="lab">Pass</span><p>The system preserves human dignity regardless of efficiency, productivity, disability, age, poverty, vulnerability, or predicted value.</p></div>
+          <div class="verdict fail"><span class="lab">Fail</span><p>The system treats people primarily as costs, risks, resources, attention targets, or optimization variables.</p></div>
+        </div>
+      </details>
+      <details class="gate">
+        <summary>
+          <span class="gate__n">II</span>
+          <span class="gate__q"><b>Gate · Common Good</b>Does the system serve shared life, or does it enclose power?</span>
+          <span class="gate__chev" aria-hidden="true">›</span>
+        </summary>
+        <div class="gate__body">
+          <div class="verdict pass"><span class="lab">Pass</span><p>Benefits and burdens are identified, distributed, and governed with public-interest safeguards.</p></div>
+          <div class="verdict fail"><span class="lab">Fail</span><p>The system extracts value from many while concentrating control in a few.</p></div>
+        </div>
+      </details>
+      <details class="gate">
+        <summary>
+          <span class="gate__n">III</span>
+          <span class="gate__q"><b>Gate · Subsidiarity</b>Can affected people contest, appeal, override, or meaningfully influence the system?</span>
+          <span class="gate__chev" aria-hidden="true">›</span>
+        </summary>
+        <div class="gate__body">
+          <div class="verdict pass"><span class="lab">Pass</span><p>The system includes appeal paths, human review, stakeholder input, and local/contextual override.</p></div>
+          <div class="verdict fail"><span class="lab">Fail</span><p>Decisions are imposed by centralized technical, corporate, or state actors without redress.</p></div>
+        </div>
+      </details>
+      <details class="gate">
+        <summary>
+          <span class="gate__n">IV</span>
+          <span class="gate__q"><b>Gate · Truth</b>Does the system blur truth and falsehood, or does it disclose uncertainty and provenance?</span>
+          <span class="gate__chev" aria-hidden="true">›</span>
+        </summary>
+        <div class="gate__body">
+          <div class="verdict pass"><span class="lab">Pass</span><p>Synthetic content, uncertainty, sources, recommendation logic, and limits are clearly disclosed.</p></div>
+          <div class="verdict fail"><span class="lab">Fail</span><p>The system presents opaque, manipulative, unverifiable, or synthetic output as trustworthy truth.</p></div>
+        </div>
+      </details>
+      <details class="gate">
+        <summary>
+          <span class="gate__n">V</span>
+          <span class="gate__q"><b>Gate · Accountability</b>Can a harmed person identify who is responsible?</span>
+          <span class="gate__chev" aria-hidden="true">›</span>
+        </summary>
+        <div class="gate__body">
+          <div class="verdict pass"><span class="lab">Pass</span><p>There is a named human owner, audit trail, escalation path, appeal process, and final human authority.</p></div>
+          <div class="verdict fail"><span class="lab">Fail</span><p>Responsibility is hidden behind the model, vendor, automation layer, or “the machine.”</p></div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ====================== FIVE RED LINES ====================== -->
+  <section class="console reveal" id="red-lines">
+    <div class="app-head">
+      <span class="kicker">Quinque Lineae Rubrae</span>
+      <h2>Five Red Lines</h2>
+      <p class="sub">What the doctrine refuses.</p>
+    </div>
+    <ol class="redlines">
+      <li><p>No human being may be reduced to a score of worth.</p></li>
+      <li><p>No high-stakes decision may hide responsibility behind a model.</p></li>
+      <li><p>No private platform may quietly govern public truth without scrutiny.</p></li>
+      <li><p>No automation may sacrifice workers without protection and retraining.</p></li>
+      <li><p>No machine may simulate moral agency where conscience is required.</p></li>
+    </ol>
+  </section>
+
+  <!-- ====================== THE PERSON TEST ====================== -->
+  <section class="console reveal" id="person-test">
+    <div class="litany">
+      <span class="kicker" style="display:block;margin-bottom:26px;color:var(--gold-ink)">Probatio Personae</span>
+      <p class="litany__sub">Before every system, ask who becomes more human — and who becomes easier to discard.</p>
+      <ul>
+        <li>Who becomes more visible to power?</li>
+        <li>Who becomes less able to appeal?</li>
+        <li>Who carries the cost of efficiency?</li>
+        <li>Who is treated as data before being treated as human?</li>
+        <li>Who can stop the machine?</li>
+      </ul>
+      <p class="litany__close">Before every system, there is a person. Before every dataset, there is a life. Before every optimization, there is a sacrifice.</p>
+    </div>
+  </section>
+
+  <!-- ====================== EXPORT THE DOCTRINE ====================== -->
+  <section class="console reveal" id="export-doctrine">
+    <div class="app-head">
+      <span class="kicker">Exporta · Carry the Doctrine</span>
+      <h2>Export the Doctrine</h2>
+      <p class="sub">Use Magnifica Humanitas as an AI governance skill, audit checklist, or agent instruction set.</p>
+    </div>
+    <div class="export__grid">
+      <article class="xcard">
+        <div class="xcard__f">SKILL.md</div>
+        <p class="xcard__d">A governance / ethics agent skill using the five principles and verification gates.</p>
+        <button class="btn-copy" type="button" data-export="skill">Copy SKILL.md</button>
+      </article>
+      <article class="xcard">
+        <div class="xcard__f">principles.yaml</div>
+        <p class="xcard__d">Structured principles: dignity, common good, subsidiarity, truth, and accountable human control.</p>
+        <button class="btn-copy" type="button" data-export="principles">Copy principles.yaml</button>
+      </article>
+      <article class="xcard">
+        <div class="xcard__f">audit_gates.yaml</div>
+        <p class="xcard__d">Verification gates for reviewing high-stakes AI systems.</p>
+        <button class="btn-copy" type="button" data-export="gates">Copy audit_gates.yaml</button>
+      </article>
+      <article class="xcard">
+        <div class="xcard__f">agent_prompt.md</div>
+        <p class="xcard__d">A prompt for an AI governance reviewer agent.</p>
+        <button class="btn-copy" type="button" data-export="prompt">Copy agent_prompt.md</button>
+      </article>
+    </div>
+  </section>
+
+  <div class="divide reveal"><span class="ln"></span><svg style="color:var(--gold-deep)" aria-hidden="true"><use href="#crest" /></svg><span class="ln"></span></div>
+
   <!-- ====================== CONCLUSION ====================== -->
   <section id="conclusio">
     <div class="band opener reveal">
       <div class="watermark" aria-hidden="true">·</div>
       <p class="caput">Conclusio · nn. 229–245</p>
       <h2>The “More Than Human” <span class="lat">Plus quam humanum</span></h2>
+      <p class="opener__summary">What saves humanity is not an upgrade, but love descending into fragility.</p>
+      <p class="opener__quote">“What saves humanity is the divine love that descends into the most fragile point of our history and renews it from within.”</p>
     </div>
     <div class="reading">
       <div class="passage reveal">
         <aside class="marg"><span class="marg__nn">229</span><span class="marg__t">The Word Became Flesh</span></aside>
         <div class="body lead">
           <p>The letter closes with a reflection upon the Incarnation, set against the promises of transhumanism. The Word became flesh: God descended into human fragility, and so made our very weakness the setting of salvation. What saves humanity is not an upgrade, but a descent of love into the most fragile point of our history, renewing it from within.</p>
-          <div class="pull"><p>What saves humanity is the divine love that descends into the most fragile point of our history and renews it from within.</p><cite>nn. 231</cite></div>
+          <div class="pull" id="q-love"><p>What saves humanity is the divine love that descends into the most fragile point of our history and renews it from within.</p><cite>nn. 231</cite>
+            <div class="qbar">
+              <button type="button" data-act="quote">Copy quote</button>
+              <button type="button" data-act="link">Copy link</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="passage reveal">
@@ -427,6 +781,6 @@
 
 </main>
 
-<script src="assets/script.js?v=20260610b"></script>
+<script src="assets/script.js?v=20260616b"></script>
 </body>
 </html>
