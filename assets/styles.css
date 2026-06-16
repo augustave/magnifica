@@ -79,6 +79,11 @@ a { color: inherit; }
 .rail__mark .ttl { font-family: var(--inst); font-weight: 700; font-size: 12px; letter-spacing: .18em; line-height: 1.4; color: var(--gold-lite); text-transform: uppercase; }
 .rail__rule { height: 1px; background: linear-gradient(90deg, var(--gold-deep), transparent); margin-bottom: 6px; }
 
+/* doctrine / apply jump shortcuts (above the chapter spine) */
+.rail__jump { display: flex; gap: 18px; padding: 12px 4px 4px; }
+.rail__jump a { font-family: var(--inst); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: color .2s; }
+.rail__jump a:hover, .rail__jump a:focus-visible { color: var(--gold-lite); }
+
 .rail__nav { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-direction: column; }
 .rail__nav a {
   display: grid; grid-template-columns: 26px 1fr; gap: 12px; align-items: baseline;

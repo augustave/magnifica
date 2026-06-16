@@ -96,7 +96,7 @@
     const original = btn.textContent;
     btn.classList.add('copied');
     btn.textContent = 'Copied';
-    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = original; }, 1600);
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = original; }, 2000);
   }
   function fallbackCopy(text, btn) {
     const ta = document.createElement('textarea');

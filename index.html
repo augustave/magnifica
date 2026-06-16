@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/styles.css?v=20260616" />
+<link rel="stylesheet" href="assets/styles.css?v=20260616c" />
 </head>
 <body>
 
@@ -81,6 +81,7 @@
     <span class="ttl">Magnifica<br />Humanitas</span>
   </a>
   <div class="rail__rule"></div>
+  <div class="rail__jump"><a href="#principles">Doctrine</a><a href="#apply-doctrine">Apply</a></div>
   <ol class="rail__nav">
     <li><a href="#introitus"><span class="num">—</span><span class="tx">Introduction</span></a></li>
     <li><a href="#cap1"><span class="num">I</span><span class="tx">Faithful to the Gospel</span></a></li>
@@ -119,6 +120,7 @@
       <option value="#cap5">V · Civilization of Love</option>
     </optgroup>
     <optgroup label="Apply">
+      <option value="#apply-doctrine">Apply the Doctrine</option>
       <option value="#governance-gates">Governance Gates</option>
       <option value="#red-lines">Five Red Lines</option>
       <option value="#person-test">The Person Test</option>
@@ -173,17 +175,17 @@
       <a class="mode" href="#introitus">
         <span class="mode__n">I</span>
         <span class="mode__t">Read the Encyclical</span>
-        <span class="mode__d">The full ceremonial text, in five chapters from the Introduction to the Magnificat.</span>
+        <span class="mode__d">Move through the full ceremonial text from Introduction to Conclusion.</span>
       </a>
       <a class="mode" href="#principles">
         <span class="mode__n">II</span>
         <span class="mode__t">Extract the Doctrine</span>
-        <span class="mode__d">The doctrine map, the five principles, the red lines, and the quotable core.</span>
+        <span class="mode__d">Study the principles, doctrine map, and moral architecture.</span>
       </a>
-      <a class="mode" href="#governance-gates">
+      <a class="mode" href="#apply-doctrine">
         <span class="mode__n">III</span>
         <span class="mode__t">Apply the Doctrine</span>
-        <span class="mode__d">The governance gates, the person test, and an exportable governance skill.</span>
+        <span class="mode__d">Use the governance gates, red lines, person test, and exports.</span>
       </a>
     </div>
   </section>
@@ -248,7 +250,7 @@
     <div class="app-head">
       <span class="kicker">Quinque Principia · For the Digital Age</span>
       <h2>Five Principles for the Digital Age</h2>
-      <p class="sub">The doctrine, translated into a test for machines.</p>
+      <p class="sub">The doctrinal foundation translated into governance questions.</p>
     </div>
     <div class="pcards">
       <article class="pcard">
@@ -582,6 +584,13 @@
             <li><div class="d"><b>The Moral Timeframe</b>Speed and efficiency must never become the supreme motive for irreversible, lethal decisions.</div></li>
             <li><div class="d"><b>Human Control</b>The decision to use lethal force can never be delegated to opaque or automated processes; it must remain under effective, responsible human control.</div></li>
           </ol>
+          <div class="pull" id="q-blame"><p>Blame may never be collapsed into “the machine.”</p><cite>nn. 200</cite>
+            <div class="qbar" data-rule="Require named accountable human owners, audit trails, appeal paths, and incident response protocols.">
+              <button type="button" data-act="quote">Copy quote</button>
+              <button type="button" data-act="rule">Copy governance rule</button>
+              <button type="button" data-act="link">Copy link</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="passage reveal">
@@ -600,6 +609,14 @@
   </section>
 
   <div class="divide reveal"><span class="ln"></span><svg style="color:var(--gold-deep)" aria-hidden="true"><use href="#crest" /></svg><span class="ln"></span></div>
+
+  <!-- ====================== APPLY THE DOCTRINE (wrapper opener) ====================== -->
+  <section class="band opener reveal" id="apply-doctrine">
+    <div class="watermark" aria-hidden="true">·</div>
+    <p class="caput">Pars Practica · The Instrument</p>
+    <h2>Apply the Doctrine <span class="lat">Doctrina in actu</span></h2>
+    <p class="opener__summary">The encyclical becomes practical when it judges systems, institutions, and incentives.</p>
+  </section>
 
   <!-- ====================== GOVERNANCE GATES ====================== -->
   <section class="console reveal" id="governance-gates">
@@ -781,6 +798,6 @@
 
 </main>
 
-<script src="assets/script.js?v=20260616b"></script>
+<script src="assets/script.js?v=20260616c"></script>
 </body>
 </html>
