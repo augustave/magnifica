@@ -128,6 +128,56 @@ section { position: relative; }
 }
 
 /* ============================================================
+   EMBROIDERED MARGIN + RANK MEDALLION — navy band ornament
+   .band > * { z-index:2 } (0-1-0) would hoist a direct-child
+   ornament onto the text plane; the wrapper is matched as
+   .band > .band__orn (0-2-0) at z-index:1 and ALL ornament lives
+   inside it, so text (other direct children) stays above.
+   ============================================================ */
+.band { --orn-inset: clamp(22px,3vw,46px); }
+.band > .band__orn {
+  position: absolute; inset: 0; z-index: 1;
+  pointer-events: none; color: var(--gold);
+}
+
+/* (1) embroidered border: double hairline + faint inner track */
+.band__frame { position: absolute; inset: var(--orn-inset); }
+.band__frame::before { content: ""; position: absolute; inset: 0; border: 1px solid rgba(200,163,90,.16); }
+.band__frame::after  { content: ""; position: absolute; inset: 6px; border: 1px dotted rgba(200,163,90,.10); }
+
+/* (2) four corner laurel flourishes */
+.band__corner { position: absolute; width: clamp(28px,3.4vw,52px); aspect-ratio: 1 / 1; height: auto; color: var(--gold); opacity: .16; }
+.band__corner--tl { top: var(--orn-inset);    left: var(--orn-inset); }
+.band__corner--tr { top: var(--orn-inset);    right: var(--orn-inset);  transform: scaleX(-1); }
+.band__corner--bl { bottom: var(--orn-inset); left: var(--orn-inset);   transform: scaleY(-1); }
+.band__corner--br { bottom: var(--orn-inset); right: var(--orn-inset);  transform: scale(-1,-1); }
+.cover .band__corner--tl { display: none; } /* clear of crest/meta block */
+
+/* (3) descending laurel sprig in the left margin (cover + openers) */
+.band__sprig {
+  position: absolute; color: var(--gold-lite); opacity: .10;
+  width: clamp(90px,12vw,170px); aspect-ratio: 120 / 28; height: auto;
+  top: calc(var(--orn-inset) + clamp(46px,7vw,96px));
+  left: calc(var(--orn-inset) + clamp(18px,2.2vw,38px));
+  transform: rotate(90deg); transform-origin: left top;
+}
+
+/* (4) centered fleuron terminal accent (contents head / colophon) — in-flow */
+.orn-fleuron { display: block; width: 40px; height: 28px; margin: 18px auto 0; color: var(--gold); opacity: .5; }
+
+@media (max-width: 980px) {
+  .band__sprig { display: none; }
+  .band { --orn-inset: clamp(16px,3vw,28px); }
+}
+@media (max-width: 720px) {
+  .band > .band__orn { display: none; }
+  .orn-fleuron { display: none; }
+}
+@media print {
+  .band__orn, .orn-fleuron { display: none !important; }
+}
+
+/* ============================================================
    COVER
    ============================================================ */
 .cover { min-height: 100vh; display: flex; flex-direction: column; padding: clamp(34px,5vw,64px); }
