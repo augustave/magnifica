@@ -296,6 +296,7 @@ section { position: relative; }
 .colophon__role { font-family: var(--display); font-style: italic; color: var(--stone); font-size: 18px; }
 .colophon__line { width: 110px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 42px auto 0; }
 .colophon__fine { margin-top: 22px; font-family: var(--inst); font-size: 10px; letter-spacing: .4em; text-transform: uppercase; color: rgba(166,162,154,.55); }
+.colophon__flag { display: inline-block; margin-top: 28px; width: 92px; height: auto; border: 1px solid rgba(200,163,90,.4); box-shadow: 0 2px 10px rgba(0,0,0,.35); opacity: .92; }
 
 /* ============================================================
    REVEAL — gated on .js so content stays visible without JS
@@ -498,7 +499,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .toc .name em { font-size: 9pt; margin-top: 2pt; }
 
   /* interactive-only chrome: omit from print */
-  .modes, .paths, #export-doctrine, .qbar, .btn-copy, .skip, .gate__chev { display: none !important; }
+  .modes, .paths, #export-doctrine, .qbar, .btn-copy, .skip, .gate__chev, .colophon__flag { display: none !important; }
   /* keep doctrinal apparatus readable on paper */
   .app-head h2, .summa__t, .pcard__n, .gate__q, .redlines p, .litany li { color: #000; }
   .pcard, .gate, .xcard, .mode, .path, .dcol { break-inside: avoid; }
