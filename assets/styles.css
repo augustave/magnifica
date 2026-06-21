@@ -211,7 +211,7 @@ section { position: relative; }
   top: 50%; right: clamp(-48px,-2vw,28px); transform: translateY(-50%);
   width: clamp(300px,40vw,600px); aspect-ratio: 120 / 148;
   background: url("opener-crest.svg?v=5") center / contain no-repeat;
-  opacity: .5;
+  opacity: .85;
 }
 
 /* (4) centered fleuron terminal accent (contents head / colophon) — in-flow */
