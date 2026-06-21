@@ -17,6 +17,10 @@
   --gold-dark2:#6f501b;  /* deep antique-gold ink */
   --gold-hairline:rgba(184,147,63,.62); /* engraved gold line */
   --gold-soft:rgba(184,147,63,.24);     /* faint gold edge */
+  /* antique-foil crest palette */
+  --foil-dark:#5f4316; --foil-bronze:#8f6a27; --foil-mid:#b8933f;
+  --foil-light:#d8bd6a; --foil-pale:#f1dc91;
+  --crest-blue-shadow:rgba(8,18,34,.34); --crest-paper-shadow:rgba(17,30,51,.28);
   --gold-ink: #7d6332;  /* gold for small text on ivory — AA */
   --stone-ink:#6f6b60;  /* stone for small text on ivory — AA */
   --paper-card:#f8f1de; /* opaque card paper (mounted slip) */
@@ -206,8 +210,8 @@ section { position: relative; }
   content: ""; position: absolute;
   top: 50%; right: clamp(-48px,-2vw,28px); transform: translateY(-50%);
   width: clamp(300px,40vw,600px); aspect-ratio: 120 / 148;
-  background: url("opener-crest.svg?v=2") center / contain no-repeat;
-  opacity: .42;
+  background: url("opener-crest.svg?v=3") center / contain no-repeat;
+  opacity: .5;
 }
 
 /* (4) centered fleuron terminal accent (contents head / colophon) — in-flow */
@@ -279,7 +283,12 @@ section { position: relative; }
   color: rgba(200,163,90,.55); z-index: 3;
 }
 
-.cover .watermark { right: -6%; bottom: -12%; width: 58vh; height: auto; opacity: .4; }
+/* two-layer cover crest: subtle blue emboss (atmosphere) + antique-gold
+   foil seal lower-right (intentional medallion, clear of the title) */
+.cover .hero-crest-emboss { position: absolute; z-index: 1; pointer-events: none;
+  right: -8%; bottom: -14%; width: clamp(440px,56vw,820px); height: auto; opacity: .12; }
+.cover .hero-crest-foil { position: absolute; z-index: 1; pointer-events: none;
+  right: 3.5%; bottom: 4.5%; width: clamp(140px,14vw,224px); height: auto; opacity: .95; }
 
 /* ============================================================
    INCIPIT (preamble statement on ivory)
@@ -587,7 +596,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
    PRINT — ink on paper, chapter per page
    ============================================================ */
 @media print {
-  .rail, .topbar, .watermark, .cover__spine, .divide { display: none !important; }
+  .rail, .topbar, .watermark, .hero-crest-emboss, .hero-crest-foil, .cover__spine, .divide { display: none !important; }
   html { scroll-behavior: auto; }
   html.js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 
@@ -666,4 +675,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .gate > summary { grid-template-columns: auto 1fr auto; gap: 12px; }
   .gate__body { padding-left: clamp(20px,6vw,40px); }
   .verdict { grid-template-columns: 1fr; gap: 4px; }
+  /* cover crest: keep clear of the title, no overflow */
+  .cover .hero-crest-emboss { opacity: .08; width: 86vw; right: -28vw; bottom: -8vw; }
+  .cover .hero-crest-foil { width: 34vw; right: 6vw; bottom: 7vw; }
 }
