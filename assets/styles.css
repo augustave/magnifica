@@ -17,9 +17,9 @@
   --gold-dark2:#6f501b;  /* deep antique-gold ink */
   --gold-hairline:rgba(184,147,63,.62); /* engraved gold line */
   --gold-soft:rgba(184,147,63,.24);     /* faint gold edge */
-  /* antique-foil crest palette */
-  --foil-dark:#5f4316; --foil-bronze:#8f6a27; --foil-mid:#b8933f;
-  --foil-light:#d8bd6a; --foil-pale:#f1dc91;
+  /* antique-foil crest palette (wider contrast for metallic shine) */
+  --foil-void:#3f2c0d; --foil-dark:#6a4815; --foil-bronze:#9a7028;
+  --foil-mid:#c49a3d; --foil-bright:#e2c46f; --foil-glint:#fff0b2;
   --crest-blue-shadow:rgba(8,18,34,.34); --crest-paper-shadow:rgba(17,30,51,.28);
   --gold-ink: #7d6332;  /* gold for small text on ivory — AA */
   --stone-ink:#6f6b60;  /* stone for small text on ivory — AA */
@@ -210,7 +210,7 @@ section { position: relative; }
   content: ""; position: absolute;
   top: 50%; right: clamp(-48px,-2vw,28px); transform: translateY(-50%);
   width: clamp(300px,40vw,600px); aspect-ratio: 120 / 148;
-  background: url("opener-crest.svg?v=3") center / contain no-repeat;
+  background: url("opener-crest.svg?v=4") center / contain no-repeat;
   opacity: .5;
 }
 
