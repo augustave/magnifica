@@ -210,7 +210,7 @@ section { position: relative; }
   content: ""; position: absolute;
   top: 50%; right: clamp(-48px,-2vw,28px); transform: translateY(-50%);
   width: clamp(300px,40vw,600px); aspect-ratio: 120 / 148;
-  background: url("opener-crest.svg?v=4") center / contain no-repeat;
+  background: url("opener-crest.svg?v=5") center / contain no-repeat;
   opacity: .5;
 }
 
@@ -283,10 +283,8 @@ section { position: relative; }
   color: rgba(200,163,90,.55); z-index: 3;
 }
 
-/* two-layer cover crest: subtle blue emboss (atmosphere) + antique-gold
-   foil seal lower-right (intentional medallion, clear of the title) */
-.cover .hero-crest-emboss { position: absolute; z-index: 1; pointer-events: none;
-  right: -8%; bottom: -14%; width: clamp(440px,56vw,820px); height: auto; opacity: .12; }
+/* cover crest: a single antique-gold foil seal lower-right (clean gold,
+   no dark backing, intentional medallion, clear of the title) */
 .cover .hero-crest-foil { position: absolute; z-index: 1; pointer-events: none;
   right: 3.5%; bottom: 4.5%; width: clamp(140px,14vw,224px); height: auto; opacity: .95; }
 
@@ -596,7 +594,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
    PRINT — ink on paper, chapter per page
    ============================================================ */
 @media print {
-  .rail, .topbar, .watermark, .hero-crest-emboss, .hero-crest-foil, .cover__spine, .divide { display: none !important; }
+  .rail, .topbar, .watermark, .hero-crest-foil, .cover__spine, .divide { display: none !important; }
   html { scroll-behavior: auto; }
   html.js .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 
@@ -676,6 +674,5 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .gate__body { padding-left: clamp(20px,6vw,40px); }
   .verdict { grid-template-columns: 1fr; gap: 4px; }
   /* cover crest: keep clear of the title, no overflow */
-  .cover .hero-crest-emboss { opacity: .08; width: 86vw; right: -28vw; bottom: -8vw; }
   .cover .hero-crest-foil { width: 34vw; right: 6vw; bottom: 7vw; }
 }
